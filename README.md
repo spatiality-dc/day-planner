@@ -36,9 +36,9 @@ Upon completion of the task, my web application can be seen in the image below.
 
 The required outputs of this project, including this README, the url of the deployed web application and the url of this repo.
 
-- Deployed App - https://spatiality-dc.github.io/code-quiz/
+- Deployed App - https://spatiality-dc.github.io/day-planner/
 
-- Github Repo - https://github.com/spatiality-dc/code-quiz
+- Github Repo - https://github.com/spatiality-dc/day-planner
 
 ## Lessons Learned
 

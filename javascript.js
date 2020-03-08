@@ -1,11 +1,13 @@
 var dateAndTime = document.querySelector("#time-of-day");
 var currentTime;
+var storedEvents = {};
+var eventsList = [];
 renderTime();
 colourChanges();
 
 function renderTime() {
   currentTime = document.createElement("h3");
-  currentTime.setAttribute("class", "alert alert-primary text-center");
+  currentTime.setAttribute("class", "lead");
   dateAndTime.appendChild(currentTime);
   liveTime();
 }
@@ -22,6 +24,7 @@ function colourChanges() {
     const span = parseInt($(this).attr("data-time"));
     if (span < now) {
       $(this).attr("class", "past");
+      $(".event-entry").attr("contentEditable", "false");
     } else if (now == span) {
       $(this).attr("class", "present");
     } else {
@@ -54,9 +57,9 @@ function renderEvents() {
   });
 }
 function displayStoredEvents() {
-  storedEventsList = JSON.parse(localStorage.getItem("storedEvents"));
-  if (storedEventsList !== null) {
-    storedEvents = storedEventsList;
+  eventsList = JSON.parse(localStorage.getItem("storedEvents"));
+  if (eventsList !== null) {
+    storedEvents = eventsList;
   }
   renderEvents();
 }
@@ -86,5 +89,27 @@ $(".clear").on("click", function() {
       .empty();
     storedEvents[eventTime] = "";
     storeEntry();
+  }
+});
+
+$(".lock").on("click", function() {
+  var eventTime = $(this)
+    .closest(".time-block")
+    .attr("data-time");
+  if ($(this).attr("value") == "locked") {
+    $(this).attr("value", "unlocked");
+    $(this).html('<i class="fa fa-unlock"></i>');
+    $(".event-entry").attr("contentEditable", "true");
+  } else {
+    $(this).attr("value", "locked");
+    $(this).html('<i class="fa fa-lock"></i>');
+    $(".event-entry").attr("contentEditable", "false");
+    storedEvents[eventTime] = $(this)
+      .parent()
+      .prev()
+      .text()
+      .trim();
+    storeEntry();
+    displayStoredEvents();
   }
 });

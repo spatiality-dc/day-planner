@@ -24,11 +24,13 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.alert-primary {
+.lead {
   background: transparent;
   border: none;
   resize: none;
   color: snow;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .container {

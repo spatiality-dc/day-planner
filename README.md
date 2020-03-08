@@ -43,3 +43,7 @@ The required outputs of this project, including this README, the url of the depl
 ## Lessons Learned
 
 - Javascript is still hard.
+
+- I ran into some trouble with my renderEvents function. The lock button was initially propogating content from the active edit box to ALL boxes. To circumvent this, I added in another call call of parent(), though I'm not sure this was the best way. It works though.
+
+- Stacking bootstrap rows still results in cramping on smaller screens. I'm going to have to learn how to have each column in small screen rows be full width. At the moment, they are not stacking properly.

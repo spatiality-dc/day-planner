@@ -61,3 +61,7 @@ function displayStoredEvents() {
   renderEvents();
 }
 displayStoredEvents();
+
+function storeEntry() {
+  localStorage.setItem("storedEvents", JSON.stringify(storedEvents));
+}

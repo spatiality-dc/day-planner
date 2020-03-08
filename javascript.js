@@ -29,3 +29,35 @@ function colourChanges() {
     }
   });
 }
+
+function renderEvents() {
+  $(".diary-entry").each(function() {
+    var dataTime = $(this)
+      .parent()
+      .attr("data-time");
+    var lock = $(this)
+      .next()
+      .children("lock");
+    if (
+      storedEvents.hasOwnProperty(dataTime) === true &&
+      storedEvents[dataTime] !== ""
+    ) {
+      lock.attr("value", "locked");
+      lock.html('<i class="fa fa-lock"></i>');
+      $(this).attr("contentEditable", "false");
+      $(this).text(storedEvents[dataTime]);
+    } else {
+      lock.attr("value", "unlocked");
+      lock.html('<i class="fa fa-unlock"></i>');
+      $(this).attr("contentEditable", "true");
+    }
+  });
+}
+function displayStoredEvents() {
+  storedEventsList = JSON.parse(localStorage.getItem("storedEvents"));
+  if (storedEventsList !== null) {
+    storedEvents = storedEventsList;
+  }
+  renderEvents();
+}
+displayStoredEvents();

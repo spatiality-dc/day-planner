@@ -37,6 +37,7 @@ function renderEvents() {
   $(".diary-entry").each(function() {
     var dataTime = $(this)
       .parent()
+      .parent()
       .attr("data-time");
     var lock = $(this)
       .next()

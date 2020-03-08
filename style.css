@@ -48,7 +48,7 @@ textarea {
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 8rem;
   border-top: 1px solid white;
 }
 
@@ -99,7 +99,7 @@ textarea {
   line-height: 1.5;
   border-radius: 0.25rem;
   transition: color 0.15s;
-  margin: 1px;
+  margin: 2px;
 }
 
 .flexbox {

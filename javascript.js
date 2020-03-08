@@ -65,3 +65,26 @@ displayStoredEvents();
 function storeEntry() {
   localStorage.setItem("storedEvents", JSON.stringify(storedEvents));
 }
+
+$(".clear").on("click", function() {
+  var eventTime = $(this)
+    .closest(".time-block")
+    .attr("data-time");
+  console.log(
+    $(this)
+      .prev()
+      .attr("value")
+  );
+  if (
+    $(this)
+      .prev()
+      .attr("value") === "unlocked"
+  ) {
+    $(this)
+      .parent()
+      .prev()
+      .empty();
+    storedEvents[eventTime] = "";
+    storeEntry();
+  }
+});

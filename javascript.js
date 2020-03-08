@@ -1,9 +1,16 @@
-// Display current date with the currentDay id, header 3rd child
+var dateAndTime = document.querySelector("#time-of-day");
+var currentTime;
+renderTime();
 
-//rows in past cannot be edited
+function renderTime() {
+  currentTime = document.createElement("h3");
+  currentTime.setAttribute("class", "alert alert-primary text-center");
+  dateAndTime.appendChild(currentTime);
+  liveTime();
+}
 
-//rows in past become grey, times in past have class of .past
-
-//rows right now have colour of red, time right now has class of .present
-
-//rows in future have colour of green, time yet to come has class of .future
+function liveTime() {
+  currentTime.textContent =
+    moment().format("dddd") + ", " + moment().format("MMMM Do YYYY, h:mm a");
+  setInterval(liveTime, 30000);
+}

@@ -26,14 +26,16 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
+      <p id="currentDay" class="lead">
+        <div class="col-12" id="time-of-day">
+      </p>
     </header>
     <main>
       <div class="container">
         <div class="alert text-center time-block" data-time="9">
            <div class="row">
                <div class="col-md-1 col-sm-1">
-                   <h3>9:00am</h3>
+                   <h5>9am</h5>
                 </div>
                 <div class="col-md-9 col-sm-7 event-entry" id="nineAM">
                   <p class="event-text" contentEditable="true"></p>
@@ -51,7 +53,7 @@
         <div class="alert text-center time-block" data-time="10">
             <div class="row">
               <div class="col-md-1 col-sm-1">
-                    <h3>10:00am</h3>
+                    <h5>10am</h5>
                 </div>
                 <div class="col-md-9 col-sm-7 event-entry" id="tenAM">
                   <p class="event-text" contentEditable="true"></p>
@@ -69,7 +71,7 @@
         <div class="alert text-center time-block" data-time="11">
             <div class="row">
               <div class="col-md-1 col-sm-1">
-                    <h3>11:00am</h3>
+                    <h5>11am</h5>
                 </div>
                 <div class="col-md-9 col-sm-7 event-entry" id="elevenAM">
                   <p class="event-text" contentEditable="true"></p>
@@ -87,7 +89,7 @@
         <div class="alert text-center time-block" data-time="12">
             <div class="row">
               <div class="col-md-1 col-sm-1">
-                    <h3>12:00pm</h3>
+                    <h5>12pm</h5>
                 </div>
                 <div class="col-md-9 col-sm-7 event-entry" id="twelvePM">
                 </div>
@@ -104,7 +106,7 @@
         <div class="alert text-center time-block" data-time="13">
             <div class="row">
               <div class="col-md-1 col-sm-1">
-                    <h3>1:00pm</h3>
+                    <h5>1pm</h5>
                 </div>
                 <div class="col-md-9 col-sm-7 event-entry" id="onePM">
                   <p class="event-text" contentEditable="true"></p>
@@ -122,7 +124,7 @@
         <div class="alert text-center time-block" data-time="14">
             <div class="row">
               <div class="col-md-1 col-sm-1">
-                    <h3>2:00pm</h3>
+                    <h5>2pm</h5>
                 </div>
                 <div class="col-md-9 col-sm-7 event-entry" id="twoPM">
                   <p class="event-text" contentEditable="true"></p>
@@ -140,7 +142,7 @@
         <div class="alert text-center time-block" data-time="15">
             <div class="row">
               <div class="col-md-1 col-sm-1">
-                    <h3>3:00pm</h3>
+                    <h5>3pm</h5>
                 </div>
                 <div class="col-md-9 col-sm-7 event-entry"id="threePM">
                   <p class="event-text" contentEditable="true"></p>
@@ -158,7 +160,7 @@
         <div class="alert text-center time-block" data-time="16">
             <div class="row">
               <div class="col-md-1 col-sm-1">
-                    <h3>4:00pm</h3>
+                    <h5>4pm</h5>
                 </div>
                 <div class="col-md-9 col-sm-7 event-entry" id="fourPM">
                   <p class="event-text" contentEditable="true"></p>
@@ -174,7 +176,6 @@
             </div>
         </div>
       </div>
-    </div>
   </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>

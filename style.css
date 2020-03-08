@@ -24,6 +24,13 @@ textarea {
   border-bottom: 10px solid black;
 }
 
+.alert-primary {
+  background: transparent;
+  border: none;
+  resize: none;
+  color: snow;
+}
+
 .container {
   box-sizing: border-box;
   width: 90%;
